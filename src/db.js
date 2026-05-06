@@ -1,9 +1,30 @@
 const { Pool } = require("pg");
 
-const connectionString = process.env.DATABASE_URL;
+function buildConnectionStringFromParts(env) {
+  const host = env.PGHOST;
+  const user = env.PGUSER;
+  const password = env.PGPASSWORD;
+  const database = env.PGDATABASE;
+  const port = env.PGPORT || "5432";
+
+  if (!host || !user || !password || !database) return null;
+
+  return `postgresql://${encodeURIComponent(user)}:${encodeURIComponent(
+    password
+  )}@${host}:${port}/${database}`;
+}
+
+const connectionString =
+  process.env.DATABASE_URL ||
+  process.env.POSTGRES_URL ||
+  process.env.POSTGRESQL_URL ||
+  process.env.POSTGRES_CONNECTION_STRING ||
+  buildConnectionStringFromParts(process.env);
 
 if (!connectionString) {
-  throw new Error("DATABASE_URL is required.");
+  throw new Error(
+    "Database connection is not configured. Set DATABASE_URL or PGHOST/PGUSER/PGPASSWORD/PGDATABASE."
+  );
 }
 
 const ssl =
