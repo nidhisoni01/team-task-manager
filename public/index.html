@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>Team Task Manager</h1>
+        <p class="muted">Projects, tasks, teams, and progress tracking.</p>
+        <div id="auth-panel" class="card"></div>
+        <div id="nav-panel" class="card hidden">
+          <button data-view="dashboard">Dashboard</button>
+          <button data-view="projects">Projects</button>
+          <button data-view="tasks">Tasks</button>
+          <button id="logout-btn" class="secondary">Logout</button>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="flash-message" class="flash hidden"></section>
+        <section id="dashboard-view" class="view hidden"></section>
+        <section id="projects-view" class="view hidden"></section>
+        <section id="tasks-view" class="view hidden"></section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
