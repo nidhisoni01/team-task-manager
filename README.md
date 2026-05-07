@@ -68,8 +68,6 @@ A lightweight full-stack web app for managing projects, assigning tasks, and tra
    - `NODE_ENV=production`
 5. Deploy. Railway will run `npm start`.
 
-## Submission Checklist
 
 - Live Railway URL: https://team-task-manager-production-8480.up.railway.app/
-- GitHub repository URL
-- Updated README
+
