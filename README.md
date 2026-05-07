@@ -70,6 +70,6 @@ A lightweight full-stack web app for managing projects, assigning tasks, and tra
 
 ## Submission Checklist
 
-- Live Railway URL
+- Live Railway URL: https://team-task-manager-production-8480.up.railway.app/
 - GitHub repository URL
 - Updated README
